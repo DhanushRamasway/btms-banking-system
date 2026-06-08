@@ -1,63 +1,182 @@
-# BTMS – Banking Transaction Management System
+Banking Transaction Management System (BTMS)
 
-Full-stack banking app: Express/TypeScript backend · PostgreSQL · React/Vite frontend · Docker Compose.
+Overview:
 
-## Quick Start (Docker)
+Banking Transaction Management System (BTMS) is a full stack web application designed to simulate modern digital banking operations. The system enables users to securely manage accounts, perform fund transfers, track transaction history, manage beneficiaries, and monitor account activities through a user friendly dashboard.
 
-```bash
-cp .env.example .env
-# Edit .env and set a strong JWT_SECRET
+The project follows a modern client server architecture with a React frontend, Express TypeScript backend, PostgreSQL database, and Docker based deployment.
 
-docker compose up --build
-```
+Features:
+User Management:
 
-Then open http://localhost in your browser.
+• User Registration and Login
+• JWT Based Authentication
+• Secure Password Hashing
+• Profile Management
+• Session Management
 
-**Push the DB schema on first run:**
-```bash
-docker compose exec backend npm run db:push
-```
+Account Management:
 
-## Demo Credentials
+• Create and Manage Bank Accounts
+• View Account Details
+• Account Balance Tracking
+• Multiple Account Support
 
-| Email | Password |
-|---|---|
-| (register a new account) | — |
+Fund Transfers:
 
-## Dev Without Docker
+• Secure Money Transfers
+• Beneficiary Based Transfers
+• Transaction Validation
+• Unique Transaction References
+• Transaction Status Tracking
 
-**Backend:**
-```bash
-cd backend
-npm install
-cp ../.env.example .env   # edit DATABASE_URL to point to your local Postgres
-npm run dev               # runs on :8080
-```
+Beneficiary Management:
 
-**Frontend:**
-```bash
-cd frontend
-npm install
-npm run dev               # runs on :3000, proxies /api → :8080
-```
+• Add Beneficiaries
+• Update Beneficiary Information
+• Remove Beneficiaries
+• View Beneficiary List
 
-## Structure
+Transaction Monitoring:
 
-```
+• Transaction History
+• Transaction Details
+• Real Time Account Updates
+• Financial Activity Tracking
+
+Security Features:
+
+• JWT Authentication
+• Password Encryption using bcrypt
+• Audit Logging
+• Token Blacklisting
+• Protected API Routes
+• Role Based User Management
+
+System Architecture:
+
+Frontend:
+• React
+• TypeScript
+• Vite
+• Tailwind CSS
+• React Query
+
+Backend:
+• Node.js
+• Express.js
+• TypeScript
+• JWT Authentication
+• REST APIs
+
+Database:
+• PostgreSQL
+• Drizzle ORM
+
+Deployment:
+• Docker
+• Docker Compose
+• Nginx
+
+Technology Stack:
+Category	Technologies - 
+Frontend	- React, TypeScript, Vite, Tailwind CSS
+Backend	- Node.js, Express.js, TypeScript
+Database	- PostgreSQL, Drizzle ORM
+Authentication	- JWT, bcrypt
+DevOps	- Docker, Docker Compose, Nginx
+Version Control -	Git, GitHub
+Database Design:
+
+The system contains the following core entities:
+
+Users:
+
+Stores user profile and authentication information.
+
+Accounts:
+
+Maintains account details, balance, account type, and status.
+
+Transactions:
+
+Records all fund transfer activities with unique reference numbers.
+
+Beneficiaries:
+
+Stores beneficiary information for easier fund transfers.
+
+Audit Logs:
+
+Tracks user activities for monitoring and security purposes.
+
+Token Blacklist:
+
+Maintains invalidated authentication tokens.
+
+Project Structure
 btms-docker/
-├── backend/          Express + TypeScript API
-│   ├── src/
-│   │   ├── db/       Drizzle schema + connection
-│   │   ├── routes/   Express route handlers
-│   │   ├── lib/      JWT, audit log, logger
-│   │   └── middlewares/  Auth middleware
-│   └── Dockerfile
-├── frontend/         React + Vite + Tailwind
-│   ├── src/
-│   │   ├── lib/      api.ts (all hooks), auth context
-│   │   ├── pages/    login, dashboard, transfer, etc.
-│   │   └── components/
-│   ├── nginx.conf    Production nginx config
-│   └── Dockerfile
-└── docker-compose.yml
-```
+│
+├── frontend/
+│   ├── pages/
+│   ├── components/
+│   ├── hooks/
+│   └── lib/
+│
+├── backend/
+│   ├── routes/
+│   ├── db/
+│   ├── middlewares/
+│   └── lib/
+│
+├── docker-compose.yml
+├── .env.example
+└── README.md
+Installation
+Clone Repository
+git clone https://github.com/yourusername/btms.git
+cd btms
+Configure Environment
+cp .env.example .env
+
+Update database credentials and JWT secret.
+
+Run Using Docker
+docker compose up --build
+Initialize Database
+docker compose exec backend npm run db:push
+
+Open:
+
+http://localhost
+Learning Outcomes
+
+Through this project I gained experience in:
+
+• Full Stack Application Development
+• REST API Design
+• Secure Authentication Implementation
+• Database Design and Management
+• Docker Based Deployment
+• Banking System Workflows
+• Audit Logging and Security Practices
+• Modern React Development
+• Backend Development with Express and TypeScript
+
+Future Enhancements:
+
+• Two Factor Authentication
+• Email Notifications
+• Admin Dashboard
+• Fraud Detection Module
+• Transaction Analytics
+• Account Statements Export
+• Role Based Access Control Expansion
+
+Author:
+
+R. Dhanush
+
+LinkedIn: linkedin.com/in/dhanush-computerscience
+
+GitHub: github.com/DhanushRamasway
